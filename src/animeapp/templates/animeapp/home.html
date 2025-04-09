@@ -1,0 +1,12 @@
+<form method="get">
+    <input type="text" name="q" paceholder="Buscar anime...">
+    <button type="submit">Buscar</button> 
+</form>
+
+{% for anime in animes%}
+    <div>
+        <h3>{{ anime.title }}</h3>
+        <img src="{{anime.images.jpg.image-url }}" width="150">
+        <p>{{ anime.synopsis|truncatechars:150 }}</p>
+    </div>
+{% endfor %}
